@@ -83,6 +83,7 @@ Función auxiliar para descomprimir y parsear datos JSON comprimidos con [fflate
 <div id="grafico" style="width:100%; max-width:600px;"></div>
 <button id="btnExport">Exportar a PNG</button>
 
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <script type="module">
 import { Lienzo } from "https://cdn.jsdelivr.net/gh/irvingfisica/d3snips/d3snips.js";
 
