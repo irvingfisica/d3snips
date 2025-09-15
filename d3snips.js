@@ -1,4 +1,4 @@
-import * as fflate from 'https://cdn.skypack.dev/fflate?min';
+//import * as fflate from 'https://cdn.skypack.dev/fflate?min';
 
 class Lienzo {
     constructor(id, aspect = 0.56, useViewBox = true) {
@@ -135,6 +135,11 @@ class Lienzo {
 
 
 function fflprocess(buffer) {
+
+    if (typeof fflate === 'undefined') {
+        throw new Error("FFlate no existe, carga fflate antes de usar esta funciónn");
+    };
+    
     let textoU8 = fflate.decompressSync(new Uint8Array(buffer));
     let datos = JSON.parse(fflate.strFromU8(textoU8));
 
@@ -142,4 +147,5 @@ function fflprocess(buffer) {
 }
 
 export {Lienzo};
+
 export {fflprocess};
